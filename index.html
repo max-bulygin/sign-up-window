@@ -20,9 +20,11 @@
            <span class="color c-four"></span>
        </div>
        <form action="save-to-log.php" method="POST">
-           <input type="text" name="name" id="subscriptionName" placeholder="Ваше Имя" required>
-           <input type="email" name="email" id="subscriptionEmail" placeholder="Ваш Email" required>
-           <input type="submit" value="Подписаться">
+           <span class="validator">Введите  Ваше имя!</span>
+           <input type="text" name="name" id="subscriptionName" placeholder="Ваше Имя*" required>
+           <span class="validator">Неправильный адрес!</span>
+           <input type="email" name="email" id="subscriptionEmail" placeholder="Ваш Email*" required>
+           <input type="submit" value="Подписаться" disabled>
        </form>
        </div>
    </div>
