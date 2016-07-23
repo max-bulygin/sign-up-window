@@ -1,5 +1,25 @@
 $(function(){
     
+    //Implement form launcning on button click
+    
+    var isFormLoaded = false,
+        $overlay = $('<div class="overlay"></div>');
+    
+    $("#subscribe").click(function(){
+        if(!isFormLoaded){
+            $("body").append($overlay);
+            $overlay.load('form.html');
+            isFormLoaded = true;
+        } else {
+            $overlay.show();
+        }   
+    });
+    
+    $("body").on("click", function(e){
+        if (e.target.className === "overlay")
+            $overlay.hide();
+    });
+    
     //Form validation
     
     var isNameValid = false,
@@ -36,18 +56,16 @@ $(function(){
         $("input[type=submit]").prop("disabled", !canSubmit());
     }
     
-    $("#userName").focus(checkName).keyup(checkName).keyup(enableSubmit);
+    $("#userName").on({focus: checkName, 
+                       keyup: checkName,
+                       keyup: enableSubmit
+                      });
     $("#userEmail").focus(checkEmail).keyup(checkEmail).keyup(enableSubmit);
     
     enableSubmit();
     
 });
 
-//Implement form launcning on button click
-  //add overlay
-  //add form to it
-
-//Hide form on overlay click
 
 //Send data to the server
   //collect data from inputs
