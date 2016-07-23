@@ -11,7 +11,7 @@
    <a href="subscribers/mylog.log">check permissions</a>
    <button id="subscribe">Subscribe</button>
    <script src="js/subscribe.js"></script>
-   <div class="overlay clearfix">
+   <div class="overlay">
        <div class="form-wrapper" id="form">
        <div class="border-top">
            <span class="color c-one"></span>
@@ -21,10 +21,10 @@
        </div>
        <form action="save-to-log.php" method="POST">
            <span class="validator">Введите  Ваше имя!</span>
-           <input type="text" name="name" id="subscriptionName" placeholder="Ваше Имя*" required>
+           <input type="text" name="name" id="userName" placeholder="Ваше Имя*" required>
            <span class="validator">Неправильный адрес!</span>
-           <input type="email" name="email" id="subscriptionEmail" placeholder="Ваш Email*" required>
-           <input type="submit" value="Подписаться" disabled>
+           <input type="email" name="email" id="userEmail" placeholder="Ваш Email*" required>
+           <input type="submit" value="Подписаться">
        </form>
        </div>
    </div>
