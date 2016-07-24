@@ -41,6 +41,20 @@ $(function(){
     
     enableSubmit();
     
+    //Send data to the server
+    
+    $("#signUpForm").submit(function(e){
+        e.preventDefault();
+        
+        var formUrl = $(this).attr("action"),
+            formData = $(this).serialize(); //collect data from inputs
+//        console.log(formData);
+        $.post(formUrl, formData, function(){
+            $("#signUpForm").html('<p class="success">Спасибо за подписку!</p>');
+        })
+    })
+        
+    
 });
 
 //Implement form launcning on button click
@@ -49,7 +63,6 @@ $(function(){
 
 //Hide form on overlay click
 
-//Send data to the server
-  //collect data from inputs
+
   //convert to JSON
   //or make a string and send to server and write it to the file without any processing
