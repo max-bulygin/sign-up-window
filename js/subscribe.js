@@ -51,6 +51,10 @@ $(function(){
 //        console.log(formData);
         $.post(formUrl, formData, function(){
             $("#signUpForm").html('<p class="success">Спасибо за подписку!</p>');
+        }).fail(function(jqXHR){
+            var $message = '<p class="fail">Что-то пошло не так. Попробуйте еще раз позже!</p>';
+            $message += '<p class="fail">' + jqXHR.statusText + '</p>';
+            $("#signUpForm").html($message);
         })
     })
         

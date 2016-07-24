@@ -12,7 +12,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-/*    display: none;*/
 }
 
 .form-wrapper {
@@ -96,7 +95,10 @@ form {
     display: none;
 }
 
-.success {
-    color: #2ecc71;
+.success,
+.fail {
     text-align: center;
 }
+
+.success { color: #2ecc71; }
+.fail { color: crimson }
