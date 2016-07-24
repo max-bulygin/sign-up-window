@@ -3,7 +3,8 @@ $(function(){
     //Implement form launcning on button click
     
     var isFormLoaded = false,
-        $overlay = $('<div class="overlay"></div>');
+        $overlay = $('<div class="overlay"></div>'),
+        $userName = $("#userName");
     
     $("#subscribe").click(function(){
         if(!isFormLoaded){
@@ -56,18 +57,29 @@ $(function(){
         $("input[type=submit]").prop("disabled", !canSubmit());
     }
     
-    $("#userName").on({focus: checkName, 
-                       keyup: checkName,
-                       keyup: enableSubmit
-                      });
+    $userName.on("focus", function(){
+        console.log("i'm here!");
+    });
+//  $("#userName").focus(checkName).keyup(checkName)         .keyup(enableSubmit);
     $("#userEmail").focus(checkEmail).keyup(checkEmail).keyup(enableSubmit);
     
     enableSubmit();
     
+    //Send data to the server
+    
+    $("#form").submit(function(e){
+        e.preventDefault();
+        var url = $(this).attr("action"),
+            formData = $(this).serialize();
+        $.post(url, formData, function(resp){
+            $("form").html("<p>Спасибо за подписку</p>");
+        })
+    })
+    
 });
 
 
-//Send data to the server
+
   //collect data from inputs
   //convert to JSON
   //or make a string and send to server and write it to the file without any processing
