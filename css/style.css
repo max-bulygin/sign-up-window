@@ -95,10 +95,10 @@ form {
     display: none;
 }
 
-.success,
-.fail {
+.fail,
+.success {
     text-align: center;
 }
 
-.success { color: #2ecc71; }
 .fail { color: crimson }
+.success { color: #2ecc71; }
