@@ -95,3 +95,8 @@ form {
     padding-left: 1.25rem;
     display: none;
 }
+
+.success {
+    color: #2ecc71;
+    text-align: center;
+}
