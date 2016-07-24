@@ -36,10 +36,11 @@ $(function(){
         $("input[type=submit]").prop("disabled", !canSubmit());
     }
     
-    $("#userName").focus(checkName).keyup(checkName).keyup(enableSubmit);
-    $("#userEmail").focus(checkEmail).keyup(checkEmail).keyup(enableSubmit);
+    $("body").on('keyup', "#userName", checkName).on('keyup', "#userName", enableSubmit);
+    $("body").on('keyup', "#userEmail", checkEmail).on('keyup', "#userEmail", enableSubmit);
     
-    enableSubmit();
+//    $("#userName").keyup(checkName).keyup(enableSubmit);
+//    $("#userEmail").keyup(checkEmail).keyup(enableSubmit);
     
     //Send data to the server
     
@@ -68,7 +69,3 @@ $(function(){
   //add form to it
 
 //Hide form on overlay click
-
-
-  //convert to JSON
-  //or make a string and send to server and write it to the file without any processing
