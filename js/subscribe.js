@@ -66,7 +66,7 @@ $(function () {
         
             var formUrl = $(this).attr("action"),
                 formData = $(this).serialize(); //collect data from inputs
-        
+        console.log(formData);
             $.post(formUrl, formData, function () {
                     $("#signUpForm").html('<p class="success">Спасибо за подписку!</p>');
                     $(".overlay").delay(1500).fadeOut();
