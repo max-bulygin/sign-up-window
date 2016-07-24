@@ -94,3 +94,11 @@ form {
     padding-left: 1.25rem;
     display: none;
 }
+
+.success,
+.fail {
+    text-align: center;
+}
+
+.success { color: #2ecc71; }
+.fail { color: crimson }

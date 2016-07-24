@@ -57,29 +57,25 @@ $(function(){
         $("input[type=submit]").prop("disabled", !canSubmit());
     }
     
-    $userName.on("focus", function(){
-        console.log("i'm here!");
-    });
-//  $("#userName").focus(checkName).keyup(checkName)         .keyup(enableSubmit);
-    $("#userEmail").focus(checkEmail).keyup(checkEmail).keyup(enableSubmit);
-    
-    enableSubmit();
+    $("body").on('keyup', "#userName", checkName).on('keyup', "#userName", enableSubmit);
+    $("body").on('keyup', "#userEmail", checkEmail).on('keyup', "#userEmail", enableSubmit);
     
     //Send data to the server
     
-    $("#form").submit(function(e){
+    $("#signUpForm").submit(function(e){
         e.preventDefault();
-        var url = $(this).attr("action"),
-            formData = $(this).serialize();
-        $.post(url, formData, function(resp){
-            $("form").html("<p>Спасибо за подписку</p>");
+        
+        var formUrl = $(this).attr("action"),
+            formData = $(this).serialize(); //collect data from inputs
+        
+        $.post(formUrl, formData, function(){
+            $("#signUpForm").html('<p class="success">Спасибо за подписку!</p>');
+            $(".overlay").delay(1500).fadeOut();
+        }).fail(function(jqXHR){
+            var $message = '<p class="fail">Что-то пошло не так. Попробуйте еще раз позже!</p>';
+            $message += '<p class="fail">' + jqXHR.statusText + '</p>';
+            $("#signUpForm").html($message);
+            $(".overlay").delay(1500).fadeOut();
         })
-    })
-    
+    }) 
 });
-
-
-
-  //collect data from inputs
-  //convert to JSON
-  //or make a string and send to server and write it to the file without any processing
