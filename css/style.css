@@ -82,6 +82,7 @@ form {
     padding: 0.9375rem; /*15px/16px*/
     margin-bottom: 0;
     min-width: 100%;
+    cursor: pointer;
 }
 
 #form input::-webkit-input-placeholder { color: #c1c4c5; }
