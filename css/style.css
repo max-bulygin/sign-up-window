@@ -103,3 +103,20 @@ form {
 
 .fail { color: crimson }
 .success { color: #2ecc71; }
+
+#subscribe {
+    text-align: center;
+    color: #d34d00;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid #d34d00;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#subscribe:hover {
+    color: rgb(20, 153, 153);
+    border-color: rgb(20, 153, 153);
+}
