@@ -1,3 +1,11 @@
+This is a simple Java Script pop-up window I made from scratch for one of my customers.
+Functionality required:
+    1. Pretty pop-up window with subscription form
+    2. Validate form on client side
+    3. Send data to the server and write it to the file subscribers.csv
+    4. Data required: Name, Email, IP Address, Date
+    5. Keep it simple
+
 I. Содержимое
     subscribe.js - браузерный скрипт;
     css/subscribe.css - стили для формы;
